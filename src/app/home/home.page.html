@@ -1,0 +1,19 @@
+
+<ion-content  [fullscreen]="true">
+  <div id="contenedor">
+    <div class="titulo">
+      <h1>Te llevo App</h1>
+    </div>
+    <swiper-container [pagination]="true" [loop]="true" > 
+      <swiper-slide><img src="/assets/carmap1.jpg" >   </swiper-slide>
+      <swiper-slide> <img src="/assets/carmap2.jpeg"> </swiper-slide>
+      <swiper-slide><img src="/assets/carmap3.jpeg"></swiper-slide>
+    </swiper-container>
+    <div class="continuar"[routerLink]="['/homepasajero']">
+      Continuar como pasajero <ion-icon name="arrow-forward-outline"></ion-icon>
+    </div>
+    <div class="continuar" [routerLink]="['/homechofer']">
+      Continuar como chofer <ion-icon name="arrow-forward-outline"></ion-icon>
+    </div>
+  </div>  
+</ion-content>

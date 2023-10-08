@@ -1,0 +1,7 @@
+{
+  "name": "TeLlevaApp_2.0",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

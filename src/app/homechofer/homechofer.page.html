@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <div id="contenedor">
+    <div class="pregunta">Ingresa tu destino <ion-icon name="pin-outline"></ion-icon></div>
+  
+    <input type="text" [(ngModel)]="end" (input)="updateSearchResults()" placeholder="Destino">
+  
+    <ion-list *ngIf="autocompleteItems && autocompleteItems.length > 0" class="custom-predictions-list">
+      <ion-item class="custom-prediction-item" *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+        {{ item.description }}
+      </ion-item>
+    </ion-list>
+    
+    <div class="map-container">
+      <div #map id="map"></div>
+    </div>
+
+    <div class="campos">
+      <div class="asientos">
+        <span>Asientos disponibles:</span>
+        <input type="text" maxlength="1"> 
+      </div>
+      <div class="precio">
+        <span>Precio:</span>
+        <input type="text" maxlength="4"> 
+      </div>
+      <div class="hora">
+        Hora de salida:
+        <input type="datetime">
+      </div>
+    </div>
+
+    <div class="btn">
+      Hora de salida
+    </div>
+
+
+
+
+
+
+  </div>
+  
+  
+</ion-content>

@@ -1,0 +1,51 @@
+#contenedor{
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+.titulo {
+  text-align: center; /* Centra el texto horizontalmente */
+  margin-top: 20px; /* Espacio entre el título y el swiper-container */
+}
+
+.titulo h1 {
+  color:#444654; /* Color del texto */
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+swiper-container{
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+swiper-slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.continuar {
+  margin-top: 20px;
+  background-color: #4E51FC;
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  border-radius: 25px; /* Agregar bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno para el botón */
+  cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+  transition: background-color 0.3s ease; /* Transición de color de fondo */
+  ion-icon{
+    margin-left: 10px;
+  }
+}
+
+.continuar:hover {
+  background-color: #3333CC; /* Cambiar el color de fondo al pasar el mouse */
+}

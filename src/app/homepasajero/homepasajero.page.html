@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+
+  
+  
+  <div id="contenedor">
+    <div class="pregunta">Ingresa tu destino <ion-icon name="pin-outline"></ion-icon></div>
+
+
+      <div #map id="map"></div>
+	  <input type="text"  [(ngModel)]="end" (input)="updateSearchResults()" placeholder="Destino">
+	  <ion-list *ngIf="autocompleteItems" [hidden]="autocompleteItems.length == 0">
+        		<ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+             
+          		{{ item.description }}
+        		</ion-item>
+    </ion-list>
+
+
+
+
+  </div>
+ 
+
+
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true">
+  <div id="contenedor">
+    <div class="saludo">
+      Hola, Chofer
+    </div>
+    <div class="noti">
+      <div class="Destino">Destino: "Las torres "</div>
+      <div class="hora">Hora comienzo: "22:30"</div>
+
+    </div>
+    
+    <div class="viaje">
+      <div class="soli">Solicitud de viaje</div>
+        <ion-badge color="danger">1</ion-badge>
+        <div class="nom">Nombre:"san martin"</div>
+        <div class="carrera">Carrera:"pasteleria"</div>
+        <div class="num">N° Celular:"1234"</div>
+      
+      <div class="botones">
+        <div class="si"><ion-icon name="thumbs-up-outline" ></ion-icon></div>
+        <div class="no"><ion-icon name="thumbs-down-outline"></ion-icon></div>
+      </div>
+    </div>
+    <div class="btnes">
+      <div class="cancel" [routerLink]="['/home']">Cancelar viaje</div>
+      <div class="comenzar">Comenzar</div>
+    </div>
+
+
+
+
+
+
+  </div>
+ 
+</ion-content>

@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'homechofer',
     loadChildren: () => import('./homechofer/homechofer.module').then( m => m.HomechoferPageModule)
   },
+  {
+    path: 'confirmar-viaje-p',
+    loadChildren: () => import('./confirmar-viaje-p/confirmar-viaje-p.module').then( m => m.ConfirmarViajePPageModule)
+  },
+  {
+    path: 'confirmar-viaje-ch',
+    loadChildren: () => import('./confirmar-viaje-ch/confirmar-viaje-ch.module').then( m => m.ConfirmarViajeChPageModule)
+  },
 ];
 
 @NgModule({

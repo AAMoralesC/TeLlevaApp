@@ -11,10 +11,11 @@
 .pregunta {
   color: #3F89EB;
   font-weight: bold;
-  ion-icon {
+  ion-icon{
+    margin-right: 5px;
     font-size: 1.3rem;
-    font-weight: bold;
-  }
+    vertical-align: middle;
+}
 }
 
 input {
@@ -70,16 +71,18 @@ input {
 }
 
 .asientos,
-.precio {
+.precio,
+.hora {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
 }
-
-span {
+.asientos span,
+.precio span,
+.hora span {
+  margin-right: 10px; /* Espacio entre el texto y el input */
   color: #3F89EB;
   font-weight: bold;
-  margin-bottom: 2px;
 }
 
 input[type="number"] {
@@ -91,3 +94,43 @@ input[type="number"] {
   outline: none;
 
 }
+.guardar{
+  margin-top: 20px;
+  background-color: #4E51FC;
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  border-radius: 25px; /* Agregar bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno para el botón */
+  cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+  transition: background-color 0.3s ease; /* Transición de color de fondo */
+
+}
+
+.guardar:hover {
+  background-color: #3333CC; /* Cambiar el color de fondo al pasar el mouse */
+}
+.botones {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.volver {
+  display: flex;
+  background-color: #4E51FC;
+  color: #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto; 
+}
+
+.volver:hover{
+  background-color: #3333CC;
+}
+

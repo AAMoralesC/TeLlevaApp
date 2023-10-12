@@ -24,13 +24,17 @@
         <input type="text" maxlength="4"> 
       </div>
       <div class="hora">
-        Hora de salida:
-        <input type="datetime">
+        <span>Hora de salida:</span>
+        <input type="text" id="horaSalida">
       </div>
     </div>
-
-    <div class="btn">
-      Hora de salida
+    <div class="botones">
+      <div class="volver" [routerLink]="['/home']">
+        Volver
+      </div>
+      <div class="guardar" (click)="presentAlert()"  [routerLink]="['/confirmar-viaje-ch']"> 
+        Guardar viaje
+      </div>
     </div>
 
 

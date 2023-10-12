@@ -1,15 +1,15 @@
 import { Component,ElementRef,NgZone,ViewChild, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
 import { Platform } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+
 declare var google: any;
 
 @Component({
-  selector: 'app-homechofer',
-  templateUrl: './homechofer.page.html',
-  styleUrls: ['./homechofer.page.scss'],
+  selector: 'app-confirmar-viaje-p',
+  templateUrl: './confirmar-viaje-p.page.html',
+  styleUrls: ['./confirmar-viaje-p.page.scss'],
 })
-export class HomechoferPage{
-  
+export class ConfirmarViajePPage {
 
   constructor(private platform:Platform, private zone:NgZone, private alertController: AlertController) { }
 
@@ -86,13 +86,10 @@ export class HomechoferPage{
 
   async presentAlert(){
     const alert=await this.alertController.create({
-      header: 'Creando Viaje...',
-      message:'Te notificaremos las solicitudes de viaje',
+      header: 'Solicitando Viaje...',
+      message:'Te notificaremos cuando el chofer acepte tu solicitud',
       buttons: ['Ok'],
     });
     await alert.present()
   }
-
-
 }
-

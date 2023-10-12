@@ -1,19 +1,39 @@
 <ion-content [fullscreen]="true">
 
-  
-  
   <div id="contenedor">
-    <div class="pregunta">Ingresa tu destino <ion-icon name="pin-outline"></ion-icon></div>
+
+    <div class="titulo">
+      
+      Viajes disponibles 
+      <ion-icon name="car-outline"></ion-icon>
+    </div>
+    <div class="destino">
+      <input type="text" placeholder="¿Donde vas?">
+    </div>
+    <div class="card">
+      <div class="destino">Destino: algun lugar</div>
+      <div class="conductor">Conductor: Miguel</div>
+      <div class="asientos">Asientos disponibles: 4</div>
+      <div class="precio">Precio: $1500</div>
+    </div>
+    <div class="card">
+      <div class="destino">Destino: algun lugar</div>
+      <div class="conductor">Conductor: Felipe</div>
+      <div class="asientos">Asientos disponibles: 3</div>
+      <div class="precio">Precio: $1500</div>
+    </div>
+
+    <div class="botones">
+      <div class="volver" [routerLink]="['/home']">
+        Volver
+      </div>
+      <div class="continuar" [routerLink]="['/confirmar-viaje-p']">
+        Continuar 
+      </div>
+    </div>
 
 
-      <div #map id="map"></div>
-	  <input type="text"  [(ngModel)]="end" (input)="updateSearchResults()" placeholder="Destino">
-	  <ion-list *ngIf="autocompleteItems" [hidden]="autocompleteItems.length == 0">
-        		<ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
-             
-          		{{ item.description }}
-        		</ion-item>
-    </ion-list>
+
 
 
 

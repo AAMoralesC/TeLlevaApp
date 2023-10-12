@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <div id="contenedor">
+    <div class="head">
+      <button class="volver" slot="start"><ion-icon name="arrow-undo-outline" [routerLink]="['/homepasajero']"></ion-icon></button>
+      <h4>Solicitar asiento</h4>
+    </div>
+    <div class="campos">
+      <div class="nombre">
+        Nombre:
+        <input type="text">
+      </div>
+      <div class="numero">
+        N° Celular:
+        <input type="text">
+      </div>
+      <div class="carrera">
+        Carrera:
+        <input type="">
+      </div>
+      <div class="obli">
+        (*campos obligatorios*)
+      </div>
+      <div class="map-container">
+        <div #map id="map"></div>
+      </div>
+      <div class="centro">
+        <div class="btn" [routerLink]="['/']" (click)="presentAlert()">
+          Solicitar
+        </div>
+      </div>
+  
+
+    </div>
+
+    
+
+
+
+
+
+
+  </div>
+ 
+</ion-content>

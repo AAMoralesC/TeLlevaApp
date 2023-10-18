@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'confirmar-viaje-ch',
     loadChildren: () => import('./confirmar-viaje-ch/confirmar-viaje-ch.module').then( m => m.ConfirmarViajeChPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
 ];
 
 @NgModule({

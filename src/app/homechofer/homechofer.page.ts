@@ -1,7 +1,18 @@
 import { Component,ElementRef,NgZone,ViewChild, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Platform } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 declare var google: any;
+
+
+
+export interface Viaje{
+  id: number,
+  hora: string,
+  asientos: number,
+  destino: string,
+  precio: number
+}
 
 @Component({
   selector: 'app-homechofer',
@@ -9,22 +20,45 @@ declare var google: any;
   styleUrls: ['./homechofer.page.scss'],
 })
 export class HomechoferPage{
-  
-
-  constructor(private platform:Platform, private zone:NgZone, private alertController: AlertController) { }
-
-  
-
-  
   @ViewChild('map') mapElement: ElementRef | undefined;
   public map: any;
   public start: any = "Duoc UC: Sede Melipilla - Serrano, Melipilla, Chile";
-  public end: any = "Melipilla";
   public latitude: any;
   public longitude: any;
   public directionsService: any;
   public directionsDisplay: any;
   public autocompleteItems: any
+
+
+
+  toAdd:Viaje={
+    id:0,
+    asientos:0,
+    precio:0,
+    hora:"",
+    destino: "Pomaire"
+  }
+
+  async crearViaje(){
+    let viajes = await this.storage.get("viajes") || []
+    this.toAdd.id= viajes.length + 1
+    viajes.push(this.toAdd)
+    this.storage.set("viajes", viajes)
+    console.log(viajes)
+  }
+
+
+  constructor(private platform:Platform,
+     private zone:NgZone,
+      private alertController: AlertController,
+      private storage: Storage) { }
+
+      
+  async ngOnInit() {
+    await this.storage.create();
+  }
+
+  
 
   ionViewDidEnter() {
     this.platform.ready().then(() => {
@@ -35,9 +69,8 @@ export class HomechoferPage{
   initMap() {
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer;
-    let latLng = new google.maps.LatLng(this.latitude, this.longitude);
     let mapOptions = {
-      center: latLng,
+      
       zoom: 5,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       disableDefaultUI: true
@@ -51,7 +84,7 @@ export class HomechoferPage{
   calculateAndDisplayRoute() {
     this.directionsService.route({
       origin: this.start,
-      destination: this.end,
+      destination: this.toAdd.destino,
       travelMode: 'DRIVING'
     }, (response: any, status: string) => {
       if (status === 'OK') {
@@ -64,11 +97,11 @@ export class HomechoferPage{
 
   updateSearchResults() {
     let GoogleAutocomplete = new google.maps.places.AutocompleteService();
-    if (this.end == '') {
+    if (this.toAdd.destino == '') {
       this.autocompleteItems = [];
       return;
     }
-    GoogleAutocomplete!.getPlacePredictions({ input: this.end },
+    GoogleAutocomplete!.getPlacePredictions({ input: this.toAdd.destino },
       (predictions: any, status: any) => {
         this.autocompleteItems = [];
         this.zone.run(() => {
@@ -79,7 +112,7 @@ export class HomechoferPage{
       });
   }
   selectSearchResult(item: any) {
-    this.end = item.description
+    this.toAdd.destino = item.description
     this.autocompleteItems = []
     this.initMap()
   }

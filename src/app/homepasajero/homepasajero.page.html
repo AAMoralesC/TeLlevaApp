@@ -10,18 +10,16 @@
     <div class="destino">
       <input type="text" placeholder="¿Donde vas?">
     </div>
-    <div class="card">
-      <div class="destino">Destino: algun lugar</div>
-      <div class="conductor">Conductor: Miguel</div>
-      <div class="asientos">Asientos disponibles: 4</div>
-      <div class="precio">Precio: $1500</div>
+    <div class="card" *ngFor="let viaje of viajes">
+      
+      <div class="id">ID Viaje: {{viaje.id}}</div>
+      <div class="destino">Destino: {{viaje.destino}}</div>
+      <div class="conductor">Conductor: </div>
+      <div class="asientos">Asientos disponibles: {{viaje.asientos}}
+      </div>
+      <div class="precio">Precio: {{viaje.precio}}</div>
     </div>
-    <div class="card">
-      <div class="destino">Destino: algun lugar</div>
-      <div class="conductor">Conductor: Felipe</div>
-      <div class="asientos">Asientos disponibles: 3</div>
-      <div class="precio">Precio: $1500</div>
-    </div>
+
 
     <div class="botones">
       <div class="volver" [routerLink]="['/home']">

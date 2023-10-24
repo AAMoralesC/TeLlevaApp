@@ -6,13 +6,14 @@
   font-family: 'Gabarito', sans-serif;
 }
 
+
 #contenedor{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f2f2f2;
     padding: 20px;
-    height: 90vh;
+    height: 140vh;
 }
 .titulo {
     padding-top: 25px;
@@ -81,3 +82,4 @@ input {
 .volver:hover{
   background-color: #3333CC;
 }
+

@@ -8,14 +8,10 @@
 
   
   
-.scroll
-{
-     overflow-x:scroll;
-     overflow-y:hidden;
-}
+
   
   #contenedor{
-    min-height: 160vh;
+    min-height: 100vh;
     background-color: white;
     display: flex;
     justify-content: center;

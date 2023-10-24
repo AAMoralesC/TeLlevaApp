@@ -26,7 +26,7 @@
     }
     
 }
-input {
+.inp {
     width: 100%; /* Ocupará el ancho completo del contenedor padre */
     padding: 10px;
     background-color: #fff;
@@ -53,6 +53,29 @@ input {
     padding: 10px 20px;
 }
 .btnes{
+    bottom: 0;
+    position: fixed;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+
+}
+.elegir {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.r1 {
+    text-align: center;
+    margin-top:0 20px;
+    
+    
+}
+
+.r2 {
+    text-align: center;
+    margin:0 20px;
+}
+.como{
+    margin-top: 10px;
 }

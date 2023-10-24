@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-registro',
@@ -7,7 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroPage implements OnInit {
 
-  constructor() { }
+  usuario={
+    nombre:"",
+    correo:"",
+    pass1:"",
+    pass2:""
+  }
+  nombre:string="";
+  correo:string="";
+  pass1:string="";
+  pass2:string="";
+
+
+  r1: boolean= false;
+  r2: boolean=false;
+ 
+
+
+
+  constructor(private storage: Storage) { }
+
+
+  async registrarUsuario(usuario: any){
+    let usuariosRegistrados = await this.storage.get('usuarios')|| [];
+    usuariosRegistrados.push(usuario);
+    await this.storage.set('usuarios', usuariosRegistrados);
+      
+
+  }
+
+
 
   ngOnInit() {
   }

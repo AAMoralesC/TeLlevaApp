@@ -10,9 +10,10 @@
     <div class="destino">
       <input type="text" placeholder="¿Donde vas?">
     </div>
-    <div class="card" *ngFor="let viaje of viajes">
+    
+    <div class="card" *ngFor="let viaje of viajes" >
       
-      <div class="id">ID Viaje: {{viaje.id}}</div>
+      <div class="id">Id viaje: {{viaje.id}}</div>
       <div class="destino">Destino: {{viaje.destino}}</div>
       <div class="conductor">Conductor: </div>
       <div class="asientos">Asientos disponibles: {{viaje.asientos}}

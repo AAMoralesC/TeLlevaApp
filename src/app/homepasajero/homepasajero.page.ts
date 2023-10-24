@@ -9,6 +9,7 @@ export interface Viaje{
   precio: number
 }
 
+
 @Component({
   selector: 'app-homepasajero',
   templateUrl: './homepasajero.page.html',
@@ -16,13 +17,17 @@ export interface Viaje{
 })
 export class HomepasajeroPage implements OnInit{
 
+ 
   viajes:Viaje[]=[]
-  
+
+
   constructor( private storage: Storage) { }
 
   async ngOnInit() {
     this.viajes = await this.storage.get("viajes") || []
     
   }
+
+
 
 }

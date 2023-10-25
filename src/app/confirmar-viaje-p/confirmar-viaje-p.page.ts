@@ -1,8 +1,16 @@
 import { Component,ElementRef,NgZone,ViewChild, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 declare var google: any;
+
+export interface Pasajero{
+  nombrePas:string,
+  celular:string,
+  carrera:string
+}
+
 
 @Component({
   selector: 'app-confirmar-viaje-p',
@@ -11,9 +19,24 @@ declare var google: any;
 })
 export class ConfirmarViajePPage {
 
-  constructor(private platform:Platform, private zone:NgZone, private alertController: AlertController) { }
+  agregar:Pasajero={ 
+    nombrePas:"",
+    celular:"",
+    carrera:""
+   }
 
-  
+  constructor(private platform:Platform, private zone:NgZone, private alertController: AlertController, private storage: Storage) { }
+
+  async ngOnInit(){
+    await this.storage.create(); 
+  }
+
+  async guardarPas(){
+    let pasajeros = await this.storage.get("pasajeros") || []; 
+    pasajeros.push(this.agregar)
+    this.storage.set("pasajeros", pasajeros)
+    console.log(pasajeros)
+  }
 
   
   @ViewChild('map') mapElement: ElementRef | undefined;
@@ -25,6 +48,8 @@ export class ConfirmarViajePPage {
   public directionsService: any;
   public directionsDisplay: any;
   public autocompleteItems: any
+
+
 
   ionViewDidEnter() {
     this.platform.ready().then(() => {

@@ -7,15 +7,15 @@
     <div class="campos">
       <div class="nombre" >
         Nombre:
-        <input type="text" [(ngModel)]="nombrePas">
+        <input type="text" [(ngModel)]="agregar.nombrePas">
       </div>
       <div class="numero">
         N° Celular:
-        <input type="text" [(ngModel)]="numero">
+        <input type="text" [(ngModel)]="agregar.celular">
       </div>
       <div class="carrera">
         Carrera:
-        <input type="text"[(ngModel)]="carrera">
+        <input type="text"[(ngModel)]="agregar.carrera">
       </div>
       <div class="obli">
         (*campos obligatorios*)
@@ -24,7 +24,7 @@
         <div #map id="map"></div>
       </div>
       <div class="centro">
-        <div class="btn" [routerLink]="['/']" (click)="presentAlert()">
+        <div class="btn" [routerLink]="['/']" (click)="presentAlert()" (click)="guardarPas()">
           Solicitar
         </div>
       </div>

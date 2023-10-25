@@ -9,18 +9,21 @@
 
     </div>
     
-    <div class="viaje">
-      <div class="soli">Solicitud de viaje</div>
+    <div class="viaje" *ngFor="let pasajero of pasajeros" >
+      <div class="soli" >Solicitud de viaje</div>
         <ion-badge color="danger">1</ion-badge>
-        <div class="nom">Nombre:"san martin"</div>
-        <div class="carrera">Carrera:"pasteleria"</div>
-        <div class="num">N° Celular:"1234"</div>
-      
+        <div class="nom">Nombre: {{ pasajero.nombrePas }}</div>
+        <div class="carrera">Carrera: {{ pasajero.carrera }}</div>
+        <div class="num">N° Celular: {{ pasajero.celular }}</div>
+  
       <div class="botones">
+        <div class="preg">¿Viajas con él/ella?</div>
         <div class="si"><ion-icon name="thumbs-up-outline" ></ion-icon></div>
         <div class="no"><ion-icon name="thumbs-down-outline"></ion-icon></div>
       </div>
     </div>
+
+
     <div class="btnes">
       <div class="cancel" [routerLink]="['/home']">Cancelar</div>
       <div class="comenzar">Comenzar</div>

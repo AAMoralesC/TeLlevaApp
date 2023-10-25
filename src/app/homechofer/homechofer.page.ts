@@ -36,7 +36,7 @@ export class HomechoferPage{
     asientos:0,
     precio:0,
     hora:"",
-    destino: "Pomaire"
+    destino: ""
   }
 
   async crearViaje(){

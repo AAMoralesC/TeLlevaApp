@@ -5,37 +5,31 @@
     <div class="campos">
       <div class="user">
         Nombre: 
-        <input type="text" class="inp" placeholder="Ingrese su nombre" [(ngModel)]="usuario.nombre" required>
+        <input type="text" class="inp" placeholder="Ingrese su nombre" [(ngModel)]="toAdd.nombre" required>
       </div>
       <div class="email">
         Email:
-        <input type="text"  class="inp" placeholder="Ingrese su email" [(ngModel)]="usuario.correo" required>
+        <input type="text"  class="inp" placeholder="Ingrese su email" [(ngModel)]="toAdd.correo" required>
       </div>
       <div class="clave" >
         Contraseña:
-        <input type="password" class="inp" placeholder="Ingresa tu contraseña"  required>
-        <input type="password" class="inp" placeholder="Confirma tu contraseña"  required> 
+        <input type="password" class="inp" [(ngModel)]="toAdd.pass1" placeholder="Ingresa tu contraseña"  required>
       </div>
     </div>
-
-
-    <div class="como">¿Cómo viajas?</div>
+    <div class="como">¿Te registras como?</div>
     <div class="elegir">
       <div class="r1">
         <label>Pasajero
-        <input type="radio"  ></label>
+        <input type="radio" name="registro" value="pasajero" [(ngModel)]="toAdd.tipo"  ></label>
       </div>
       <div class="r2">
         <label>Chofer
-        <input type="radio" ></label>
+        <input type="radio"  name="registro" value="chofer" [(ngModel)]="toAdd.tipo"  ></label>
       </div> 
     </div>
-
-    
-    
     <div class="btnes">
       <div class="btn" routerLink="/home">Cancelar</div>
-      <div class="btn" routerLink="/login" >Registrar</div>
+      <div class="btn" (click)="registrarUsuario()"  >Registrar</div>
     </div>
 
 

@@ -1,6 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 
+
+
+export interface Usuario
+{
+  id:number,
+  nombre:string,
+  correo:string,
+  pass1:string,
+  tipo:string
+ 
+}
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -8,38 +19,32 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class RegistroPage implements OnInit {
 
-  usuario={
+  toAdd:Usuario={
+    id:0,
     nombre:"",
     correo:"",
     pass1:"",
-    pass2:""
+    tipo:""
   }
-  nombre:string="";
-  correo:string="";
-  pass1:string="";
-  pass2:string="";
 
-
-  r1: boolean= false;
-  r2: boolean=false;
- 
 
 
 
   constructor(private storage: Storage) { }
 
 
-  async registrarUsuario(usuario: any){
-    let usuariosRegistrados = await this.storage.get('usuarios')|| [];
-    usuariosRegistrados.push(usuario);
-    await this.storage.set('usuarios', usuariosRegistrados);
-      
-
+  async registrarUsuario(){
+    let usuariosRegistrados = await this.storage.get('usuario') || [];
+    this.toAdd.id= usuariosRegistrados.length + 1
+    usuariosRegistrados.push(this.toAdd);
+    await this.storage.set('usuario', usuariosRegistrados);
+    console.log(usuariosRegistrados)
   }
 
 
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.storage.create();
   }
 
 }

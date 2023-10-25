@@ -51,7 +51,7 @@ export class RegistroPage implements OnInit {
   async presentAlert(){
     const alert=await this.alertController.create({
       header: 'Usuario registrado exitosamente',
-      message:'Te estamos redirigiendo al inicio de sesión.',
+      message:'',
       buttons: ['Ok'],
     });
     await alert.present()

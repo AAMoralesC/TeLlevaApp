@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { AlertController, NavController } from '@ionic/angular';
+
+export interface Usuario
+{
+  id:number,
+  nombre:string,
+  correo:string,
+  pass1:string,
+  tipo:string
+ 
+}
 
 @Component({
   selector: 'app-login',
@@ -8,12 +19,37 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private storage: Storage) { }
+  usuario: Usuario[] = []
+  constructor(private storage: Storage, private alertController: AlertController, private nav:NavController) { }
 
   email:string="";
   pass:string="";
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.storage.create();
+  }
+
+  async ingresar() 
+  {
+    this.usuario = await this.storage.get("usuario")
+    const usuarioEncontrado = this.usuario.find((usuario) => usuario.correo === this.email && usuario.pass1 === this.pass);
+    if(usuarioEncontrado) 
+    {
+      if(usuarioEncontrado.tipo === 'pasajero')
+      {
+          this.nav.navigateForward(['/homepasajero'])
+      }
+      else if(usuarioEncontrado.tipo === 'chofer')
+      {
+          this.nav.navigateForward(['/homechofer'])
+      }
+    
+    }
+    else
+    {
+      //console.log("noooo")
+    }
+
   }
 
 }

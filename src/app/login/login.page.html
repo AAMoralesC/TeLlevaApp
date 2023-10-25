@@ -10,7 +10,7 @@
       <div class="pass">Contraseña: 
         <input type="password" placeholder="Ingrese su contraseña" [(ngModel)]="pass" >
       </div>
-      <div class="btn">Ingresar</div>
+      <div class="btn" (click)="ingresar()">Ingresar</div>
       <div class="no">
         ¿No tienes cuenta? <div class="notengo" routerLink="/registro" >Registrate!</div>
         <a href=""> ¿Olvidaste tu contraseña?</a>

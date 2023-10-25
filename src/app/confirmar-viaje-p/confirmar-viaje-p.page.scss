@@ -30,7 +30,7 @@
   background-color: white; 
   padding: 10px; 
   display: flex; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
 }
 
 .volver{
@@ -80,12 +80,13 @@ h4{
   
 }
 input {
+  height: auto;
   width: 170px;
-  padding: 10px;
+  padding: 5px;
   background-color: #fff;
   color: #3F89EB;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 10px;
   margin-right: 10px;
   border: none;

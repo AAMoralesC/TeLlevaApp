@@ -40,10 +40,14 @@ swiper-slide{
   justify-content: center;
 }
 .continuar {
-  margin-top: 20px;
+  
+  margin-top: 35px;
+  width: 200px;
+  height: 35px;
   background-color: #4E51FC;
   color: #fff;
   justify-content: center;
+  align-items: center;
   display: flex;
   border-radius: 25px; /* Agregar bordes redondeados */
   padding: 10px 20px; /* Espaciado interno para el botón */

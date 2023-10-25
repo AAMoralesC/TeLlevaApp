@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { AlertController } from '@ionic/angular';
 
 
 
@@ -30,7 +31,7 @@ export class RegistroPage implements OnInit {
 
 
 
-  constructor(private storage: Storage) { }
+  constructor(private storage: Storage, private alertController: AlertController) { }
 
 
   async registrarUsuario(){
@@ -47,4 +48,12 @@ export class RegistroPage implements OnInit {
     await this.storage.create();
   }
 
+  async presentAlert(){
+    const alert=await this.alertController.create({
+      header: 'Usuario registrado exitosamente',
+      message:'Te estamos redirigiendo al inicio de sesión.',
+      buttons: ['Ok'],
+    });
+    await alert.present()
+  }
 }

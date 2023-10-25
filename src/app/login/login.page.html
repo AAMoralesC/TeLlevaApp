@@ -5,14 +5,14 @@
 
     <div id="campos">
       <div class="email">Email:  
-        <input type="text" placeholder="Ingrese su email" >
+        <input type="text" placeholder="Ingrese su email" [(ngModel)]="email">
       </div>
       <div class="pass">Contraseña: 
-        <input type="password" placeholder="Ingrese su contraseña"  >
+        <input type="password" placeholder="Ingrese su contraseña" [(ngModel)]="pass" >
       </div>
       <div class="btn">Ingresar</div>
       <div class="no">
-        ¿No tienes cuenta? <div class="notengo" routerLink="/registro" >Registrate aqui!</div>
+        ¿No tienes cuenta? <div class="notengo" routerLink="/registro" >Registrate!</div>
         <a href=""> ¿Olvidaste tu contraseña?</a>
       </div>
     </div>

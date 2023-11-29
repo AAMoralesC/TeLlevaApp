@@ -8,10 +8,12 @@
       <ion-icon name="car-outline"></ion-icon>
     </div>
     <div class="destino">
-      <input type="text" placeholder="¿Donde vas?">
+      <input type="text" placeholder="¿Donde vas?" >
     </div>
+
     
-    <div class="card" *ngFor="let viaje of viajes" >
+      
+    <div class="card" *ngFor="let viaje of viajes ">
       
       <div class="id">Id viaje: {{viaje.id}}</div>
       <div class="destino">Destino: {{viaje.destino}}</div>

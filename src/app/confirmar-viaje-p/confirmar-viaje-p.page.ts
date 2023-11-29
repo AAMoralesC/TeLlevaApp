@@ -28,15 +28,18 @@ export class ConfirmarViajePPage {
   constructor(private platform:Platform, private zone:NgZone, private alertController: AlertController, private storage: Storage) { }
 
   async ngOnInit(){
+  
     await this.storage.create(); 
   }
 
   async guardarPas(){
     let pasajeros = await this.storage.get("pasajeros") || []; 
+    
     pasajeros.push(this.agregar)
     this.storage.set("pasajeros", pasajeros)
     console.log(pasajeros)
   }
+
 
   
   @ViewChild('map') mapElement: ElementRef | undefined;

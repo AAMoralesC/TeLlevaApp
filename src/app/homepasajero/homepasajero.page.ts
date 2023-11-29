@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 
+
 export interface Viaje{
   id: number,
   hora: string,
@@ -21,13 +22,15 @@ export class HomepasajeroPage implements OnInit{
   viajes:Viaje[]=[]
 
 
-  constructor( private storage: Storage) { }
+  constructor( 
+    private storage: Storage) { }
 
   async ngOnInit() {
     this.viajes = await this.storage.get("viajes") || []
     
+  
   }
 
 
-
 }
+

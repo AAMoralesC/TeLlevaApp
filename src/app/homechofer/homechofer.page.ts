@@ -26,6 +26,7 @@ export class HomechoferPage{
   public latitude: any;
   public longitude: any;
   public directionsService: any;
+  
   public directionsDisplay: any;
   public autocompleteItems: any
 

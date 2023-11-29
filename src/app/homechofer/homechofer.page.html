@@ -1,5 +1,5 @@
 <ion-content [fullscreen]="true">
-  <div id="contenedor">
+  <div class="header">
     <div class="pregunta">Ingresa tu destino <ion-icon name="pin-outline"></ion-icon></div>
   
     <input id="buscador" [(ngModel)]="toAdd.destino" (input)="updateSearchResults()" placeholder="Destino">
@@ -9,10 +9,13 @@
         {{ item.description }}
       </ion-item>
     </ion-list>
+   </div>
+  <div id="contenedor">
+   
     
     <div class="map-container">
       <div #map id="map"></div>
-    </div>
+    </div>  
 
     <div class="campos">
       <div class="asientos">
@@ -28,20 +31,16 @@
         <input type="text" id="horaSalida" [(ngModel)]="toAdd.hora">
       </div>
     </div>
-    <div class="botones">
-      <div class="volver" [routerLink]="['/home']">
-        Volver
-      </div>
-      <div class="guardar" (click)="crearViaje()"  [routerLink]="['/confirmar-viaje-ch']"> 
-        Guardar viaje
-      </div>
 
+
+  </div>
+  <div class="botones">
+    <div class="volver" [routerLink]="['/home']">
+      Volver
     </div>
-
-
-
-
-
+    <div class="guardar" (click)="crearViaje()"  [routerLink]="['/confirmar-viaje-ch']"> 
+      Guardar viaje
+    </div>
 
   </div>
   

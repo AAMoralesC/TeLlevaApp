@@ -3,29 +3,29 @@
     <div class="saludo">
       Hola, Chofer
     </div>
-    <div class="noti">
-      <div class="Destino" >Destino: "Las torres "</div>
-      <div class="hora">Hora comienzo: "22:30"</div>
-
+    <div *ngIf="viajes.length > 0">
+      <div class="noti">
+        <div class="Destino">Destino: {{viajes[viajes.length - 1].destino}} </div>
+        <div class="hora">Hora comienzo: {{viajes[viajes.length - 1].hora}} </div>
+      </div>
     </div>
     
     <div class="viaje" *ngFor="let pasajero of pasajeros" >
       <div class="soli" >Solicitud de viaje</div>
-        <ion-badge color="danger">1</ion-badge>
         <div class="nom">Nombre: {{ pasajero.nombrePas }}</div>
         <div class="carrera">Carrera: {{ pasajero.carrera }}</div>
         <div class="num">N° Celular: {{ pasajero.celular }}</div>
   
       <div class="botones">
         <div class="preg">¿Viajas con él/ella?</div>
-        <div class="si"><ion-icon name="thumbs-up-outline" ></ion-icon></div>
+        <div class="si"><ion-icon name="thumbs-up-outline"></ion-icon></div>
         <div class="no"><ion-icon name="thumbs-down-outline"></ion-icon></div>
       </div>
     </div>
 
 
     <div class="btnes">
-      <div class="cancel" [routerLink]="['/home']">Cancelar</div>
+      <div class="cancel" [routerLink]="['/homechofer']">Cancelar</div>
       <div class="comenzar">Comenzar</div>
     </div>
 

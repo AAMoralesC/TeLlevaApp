@@ -12,11 +12,20 @@
   align-items: center;
 
   background-color: #f2f2f2;
-  padding: 20px;
+  // padding: 20px;
   height: 100vh;
 }
-
+.header{
+  position: absolute;
+    top: 0px;
+    height: 10vh;
+    z-index: 1;
+    background-color: #ffffff96;
+    width: 100%;
+}
 .pregunta {
+  margin-top: 20px;
+  text-align: center;
   color: #3F89EB;
   font-weight: bold;
   ion-icon{
@@ -27,7 +36,8 @@
 }
 
 input {
-  width: 170px;
+  height: 25%;
+  width: 100%;
   padding: 10px;
   background-color: #fff;
   color: #3F89EB;
@@ -43,13 +53,13 @@ input {
 .map-container {
   background-color: #fff;
   width: 115%;
-  height: 350px;
+  height: 100%;
 
 }
 
 #map {
   width: 100%;
-  height:100%;
+  height:100vh;
 }
 
 .custom-predictions-list {
@@ -74,46 +84,60 @@ input {
   background-color: #e0e0e0;
   cursor: pointer;
 }
+/* Aumenta el tamaño del div de fondo */
 .campos {
+  position: absolute;
+  bottom: 72px;
+  z-index: 1;
   display: inline-block;
-  justify-content: space-evenly;
+  background: rgb(180, 182, 180);
+  background: radial-gradient(
+    circle,
+    rgba(180, 182, 180, 0.65) 0%,
+    rgba(180, 182, 180, 0.6502976190476191) 48%
+  );
+  padding: 8px; /* Aumenta el tamaño del fondo añadiendo relleno */
 }
+
+/* Establece un ancho fijo para los input dentro de las clases asientos, precio y hora */
+.campos input {
+  width: auto; 
+  padding: 8px; 
+  margin: 4px 0;
+  box-sizing: border-box;
+  flex: 1;
+  
+}
+
+
 
 .asientos,
 .precio,
 .hora {
   display: flex;
-  justify-content: space-between;
+  margin-bottom: 8px;
   align-items: center;
 }
 .asientos span,
 .precio span,
 .hora span {
   margin-right: 10px; /* Espacio entre el texto y el input */
-  color: #3F89EB;
+  color: #4E51FC;
   font-weight: bold;
 }
 
-input[type="number"] {
-  width: 40px;
-  padding: 5px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: none;
-  outline: none;
 
-}
 #buscador {
   width: 100%;
   height: 30px;
 }
 .guardar{
-  margin-top: 20px;
+  // margin-top: 20px;
   background-color: #4E51FC;
   color: #fff;
   justify-content: center;
   display: flex;
-  border-radius: 25px; /* Agregar bordes redondeados */
+  border-radius: 25px;  
   padding: 10px 20px; /* Espaciado interno para el botón */
   cursor: pointer; /* Cambiar el cursor al pasar el mouse */
   transition: background-color 0.3s ease; /* Transición de color de fondo */
@@ -141,6 +165,7 @@ input[type="number"] {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: auto; 
+  z-index: 1;
 }
 
 .volver:hover{

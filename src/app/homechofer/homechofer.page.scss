@@ -110,6 +110,26 @@ input {
   
 }
 
+.ver {
+  position: absolute;
+  bottom: 38%; /* Posición verticalmente 10px por encima del div campos */
+  right: 10px; /* Posición a 10px desde el borde derecho */
+  background-color: #4E51FC;
+  color: #fff;
+  border-radius: 25px; /* Hace que el botón tenga forma de círculo */
+  width: 50px; /* Ancho del botón */
+  height: 50px; /* Altura del botón */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;;
+  transition: background-color 0.3s ease;
+}
+
+.ver:hover {
+  background-color: #3333CC; /* Cambia el color al pasar el mouse */
+}
 
 
 .asientos,
@@ -173,4 +193,5 @@ input {
 .volver:hover{
   background-color: #3333CC;
 }
+
 

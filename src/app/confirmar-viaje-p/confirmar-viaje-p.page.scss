@@ -66,31 +66,29 @@ h4{
   left: 0;
   margin-top: 60px; /* Espacio por encima del título */
 }
-.campos{
+.campos {
   display: flex;
-  width: 100%;
   flex-direction: column;
-  margin-top: 50px;
+  width: 100%;
+  position: fixed; /* Fija el contenedor */
+  top: 50%; /* Coloca el contenedor en la mitad superior de la pantalla */
+  transform: translateY(-50%); /* Lo desplaza hacia arriba para centrarlo */
 }
+
 .nombre,
 .numero,
-.carrera{
+.carrera {
   display: flex;
   font-weight: bold;
   justify-content: space-between;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 5%;
   margin-top: 7%;
   color: #3F89EB;
+  
+}
 
-}
-.obli {
-  font-size: small;
-  color: #3F89EB;
-  text-align: center; /* Alinea el texto al centro horizontalmente */
-  padding-top: 20px; 
-  padding-bottom: 20px; 
-}
+
 input {
   height: auto;
   width: 50%;
@@ -106,7 +104,13 @@ input {
 }
 
 
-.btn{
+
+.centro {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  
+}.btn{
   margin-top: 30px;
   background-color: #4E51FC;
   color: #fff;
@@ -122,9 +126,10 @@ input {
 .btn:hover{
   background-color: #0004ff;
 }
-.centro {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  
+.obli {
+  font-size: small;
+  color: #3F89EB;
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+  padding-top: 20px; 
+  padding-bottom: 20px; 
 }

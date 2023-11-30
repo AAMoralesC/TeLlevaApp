@@ -16,7 +16,7 @@
     <div class="map-container">
       <div #map id="map"></div>
     </div>  
-
+    <div class="ver" [routerLink]="['/confirmar-viaje-ch']">Ver Viaje</div>
     <div class="campos">
       <div class="asientos">
         <span>Asientos disponibles:</span>
@@ -38,6 +38,7 @@
     <div class="volver" [routerLink]="['/home']">
       Volver
     </div>
+
     <div class="guardar" (click)="crearViaje()"  [routerLink]="['/confirmar-viaje-ch']"> 
       Guardar viaje
     </div>

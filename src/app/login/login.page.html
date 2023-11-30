@@ -1,23 +1,23 @@
 <ion-content  [fullscreen]="true">
   <div id="contenedor">
-    <div class="titulo">Iniciar sesión <ion-icon name="log-in-outline"></ion-icon></div>
-    <br>
-
-    <div id="campos">
-      <div class="email">Email:  
-        <input type="text" placeholder="Ingrese su email" [(ngModel)]="email">
+    <div id="contenedornew">
+      <div class="titulo">Iniciar sesión <ion-icon name="log-in-outline"></ion-icon></div>
+      <br>
+  
+      <div id="campos">
+        <div class="email">Email:  
+          <input type="text" placeholder="Ingrese su email" [(ngModel)]="email">
+        </div>
+        <div class="pass">Contraseña: 
+          <input type="password" placeholder="Ingrese su contraseña" [(ngModel)]="pass" >
+        </div>
+        <div class="btn" (click)="ingresar()">Ingresar</div>
+        <div class="no">
+          ¿No tienes cuenta? <div class="notengo" routerLink="/registro" >Registrate!</div>
+          <a href="" routerLink="/olvidopass"> ¿Olvidaste tu contraseña?</a>
+        </div>
       </div>
-      <div class="pass">Contraseña: 
-        <input type="password" placeholder="Ingrese su contraseña" [(ngModel)]="pass" >
-      </div>
-      <div class="btn" (click)="ingresar()">Ingresar</div>
-      <div class="no">
-        ¿No tienes cuenta? <div class="notengo" routerLink="/registro" >Registrate!</div>
-        <a href=""> ¿Olvidaste tu contraseña?</a>
-      </div>
+  
     </div>
-
-
-
   </div>  
 </ion-content>

@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'noti-pasajero',
     loadChildren: () => import('./noti-pasajero/noti-pasajero.module').then( m => m.NotiPasajeroPageModule)
+  },  {
+    path: 'olvidopass',
+    loadChildren: () => import('./olvidopass/olvidopass.module').then( m => m.OlvidopassPageModule)
   },
+
 ];
 
 @NgModule({

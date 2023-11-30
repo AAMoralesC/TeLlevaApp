@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,26 +7,46 @@
   font-family: 'Gabarito', sans-serif;
 }
 
-#contenedor{
+#contenedor {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Centrado horizontal */
   background-color: #f2f2f2;
   padding: 20px;
-  height: 100vh;  
+  height: 100vh;
 }
-.viaje{
-  color: #3F89EB;
-  align-items: center;
+
+.viaje {
+  font-size: 1.2rem;
+  color: #3f89eb;
   text-align: center;
   font-weight: bold;
+  margin-top: 10vh; /* Ajusta la distancia desde la parte superior según sea necesario */
 }
-.gracias{
+
+.gracias {
   padding-top: 25%;
-  color: #3F89EB;
+  color: #3f89eb;
   align-items: center;
   text-align: center;
 }
-img{
+
+img {
   border-radius: 25%;
+  width: 100%; /* Ajusta el ancho de la imagen según sea necesario */
+  height: auto; /* Ajusta la altura automáticamente */
+}
+.boton {
+  margin-top: auto; /* Empuja el botón hacia la parte inferior */
+  background-color: #4e51fc;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.boton:hover {
+  background-color: #0004ff;
 }

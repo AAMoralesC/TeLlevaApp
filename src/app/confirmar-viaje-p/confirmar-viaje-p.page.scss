@@ -7,7 +7,7 @@
 }  
 #contenedor{
   min-height: 100vh;
-  background-color: white;
+  background-color: #f2f2f2;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -21,12 +21,12 @@
   position: fixed;
   display: flex;
   align-items: center;
-  background-color: white; 
+  background-color: f2f2f2; 
   padding: 10px; 
   display: flex; 
 }
 .volver{
-  background-color: #fff;
+  background-color: #f2f2f2;
   margin-right: 40px;
   align-items: center;
   ion-icon{

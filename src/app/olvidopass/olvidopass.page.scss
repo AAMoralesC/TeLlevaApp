@@ -16,14 +16,16 @@
     
 }
 
-#contenedornew{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.volver{
     background-color: #f2f2f2;
-    margin-top: 110px;
-    
-}
+    margin-right: 40px;
+    align-items: center;
+    ion-icon{
+      font-size: 2rem;
+      color: #3F89EB;
+    }
+  }
 .titulo {
     padding-top: 25px;
     color: #3F89EB;
@@ -38,7 +40,7 @@
 input {
     width: 100%; /* Ocupará el ancho completo del contenedor padre */
     padding: 10px;
-    background-color: #fff;
+    background-color: #f2f2f2;
     color: #3F89EB;
     border-radius: 5px;
     margin-top: 10px;
@@ -58,16 +60,21 @@ input {
 .email, .pass{
     color: #3F89EB;
 }
-.btn{
+.btn {
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #4E51FC;
-    color: #fff;
+    color: #f2f2f2;
     justify-content: center;
     display: flex;
     border-radius: 25px;
     padding: 10px 20px;
-}
+    position: fixed;
+    bottom: 60px; /* Ajusta este valor según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
 .campos{
     display: flex;
     justify-content: space-between;

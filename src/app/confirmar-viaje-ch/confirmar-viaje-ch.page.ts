@@ -40,6 +40,7 @@ export class ConfirmarViajeChPage implements OnInit {
     
   }
 
+
   async ngOnInit() {
 
   }

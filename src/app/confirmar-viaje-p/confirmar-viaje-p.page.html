@@ -4,6 +4,11 @@
       <button class="volver" slot="start"><ion-icon name="arrow-undo-outline" [routerLink]="['/homepasajero']"></ion-icon></button>
       <h4>Solicitar asiento</h4>
     </div>
+    <div *ngIf="viajeSeleccionado" class="noti">
+      <div class="title">Detalles del viaje</div>
+      <div class="Destino">Destino: {{ viajeSeleccionado.destino }}</div>
+      <div class="hora">Hora comienzo: {{ viajeSeleccionado.hora }} </div>
+    </div>
     <div class="campos">
       <div class="nombre" >
         Nombre:

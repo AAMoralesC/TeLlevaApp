@@ -8,18 +8,16 @@
       <ion-icon name="car-outline"></ion-icon>
     </div>
     <div class="destino">
-      <input type="text" placeholder="¿Donde vas?" >
+      <input type="text" placeholder="¿Donde vas?" [(ngModel)]="Busqueda" >
     </div>
 
     
       
-    <div class="card" *ngFor="let viaje of viajes ">
+    <div class="card" *ngFor="let viaje of filtrarViajes()" (click)="seleccionarViaje(viaje)" >
       
       <div class="id">Id viaje: {{viaje.id}}</div>
       <div class="destino">Destino: {{viaje.destino}}</div>
-      <div class="conductor">Conductor: </div>
-      <div class="asientos">Asientos disponibles: {{viaje.asientos}}
-      </div>
+      <div class="asientos">Asientos disponibles: {{viaje.asientos}}</div>
       <div class="precio">Precio: {{viaje.precio}}</div>
     </div>
 
@@ -28,9 +26,7 @@
       <div class="volver" [routerLink]="['/home']">
         Volver
       </div>
-      <div class="continuar" [routerLink]="['/confirmar-viaje-p']">
-        Continuar 
-      </div>
+
     </div>
 
 

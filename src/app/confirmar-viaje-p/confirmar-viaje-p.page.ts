@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 
 
@@ -32,7 +33,8 @@ export class ConfirmarViajePPage {
     carrera:""
    }
 
-  constructor(private alertController: AlertController, private storage: Storage) { 
+  constructor(private alertController: AlertController, private storage: Storage,    public loadingController: LoadingController,
+    private router: Router) { 
 
   }
 
@@ -51,19 +53,28 @@ export class ConfirmarViajePPage {
   async ionViewDidEnter() {
     this.viajes = await this.storage.get("viajes") || []
   }
-  async presentAlert(){
-    const alert=await this.alertController.create({
-      header: 'Solicitando Viaje...',
-      message:'Te notificaremos cuando el chofer acepte tu solicitud',
-      buttons: ['Ok'],
-    });
-    await alert.present()
-  }
+
   async ionViewWillEnter() {
     try {
       this.viajeSeleccionado = await this.storage.get('viajeSeleccionado');
     } catch (error) {
       console.error('Error al recuperar el viaje seleccionado', error);
     }
+  }
+  async mostrarLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Esperando...',
+      duration: 4000,
+      spinner: 'circles'
+    });
+    loading.present();
+
+    loading.onDidDismiss().then(() => {
+      // Redireccionar a la página deseada
+      this.router.navigate(['/']);
+    });
+
+
+ 
   }
 }

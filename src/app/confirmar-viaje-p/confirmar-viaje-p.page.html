@@ -29,7 +29,7 @@
         <div #map id="map"></div>
       </div>
       <div class="centro">
-        <div class="btn" [routerLink]="['/noti-pasajero']" (click)="presentAlert()" (click)="guardarPas()">
+        <div class="btn"   (click)="mostrarLoading()" (click)="guardarPas()">
           Solicitar
         </div>
       </div>

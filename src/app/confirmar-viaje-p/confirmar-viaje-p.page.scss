@@ -12,7 +12,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
+  position: relative;
 }
 .head{
   width: 100%;
@@ -70,9 +70,8 @@ h4{
   display: flex;
   flex-direction: column;
   width: 100%;
-  position: fixed; /* Fija el contenedor */
-  top: 50%; /* Coloca el contenedor en la mitad superior de la pantalla */
-  transform: translateY(-50%); /* Lo desplaza hacia arriba para centrarlo */
+  margin-top: 10vh;
+  
 }
 
 .nombre,
@@ -111,7 +110,7 @@ input {
   align-items: center; /* Centra verticalmente */
   
 }.btn{
-  margin-top: 30px;
+  margin-top: 5vh;
   background-color: #4E51FC;
   color: #fff;
   justify-content: center;
@@ -120,7 +119,6 @@ input {
   align-items: center;
   border-radius: 25px; 
   padding: 10px 20px; 
-  
   transition: background-color 0.3s ease;
 }
 .btn:hover{

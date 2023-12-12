@@ -42,6 +42,14 @@ const routes: Routes = [
     path: 'olvidopass',
     loadChildren: () => import('./olvidopass/olvidopass.module').then( m => m.OlvidopassPageModule)
   },
+  {
+    path: 'acepta',
+    loadChildren: () => import('./acepta/acepta.module').then( m => m.AceptaPageModule)
+  },
+  {
+    path: 'no-acepta',
+    loadChildren: () => import('./no-acepta/no-acepta.module').then( m => m.NoAceptaPageModule)
+  },
 
 ];
 

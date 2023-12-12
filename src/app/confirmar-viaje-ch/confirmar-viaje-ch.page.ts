@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 import { Storage } from '@ionic/storage-angular';
 
@@ -26,7 +27,7 @@ export class ConfirmarViajeChPage implements OnInit {
   pasajeros:Pasajero[] = []
 
 
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage, private alertController:AlertController) {
 
   }
 
@@ -38,6 +39,14 @@ export class ConfirmarViajeChPage implements OnInit {
     this.pasajeros = await this.storage.get("pasajeros") || []
     this.viajes = await this.storage.get("viajes") || []
     
+  }
+  async presentAlert(){
+    const alert=await this.alertController.create({
+      header: 'Aceptando',
+      message:'Aceptaste a viajar con este pasajero',
+      buttons: ['Ok'],
+    });
+    await alert.present()
   }
 
 

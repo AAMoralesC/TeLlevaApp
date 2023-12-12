@@ -18,8 +18,8 @@
   
       <div class="botones">
         <div class="preg">¿Viajas con él/ella?</div>
-        <div class="si"><ion-icon name="thumbs-up-outline"></ion-icon></div>
-        <div class="no"><ion-icon name="thumbs-down-outline"></ion-icon></div>
+        <div class="si" (click)="presentAlert()"[routerLink]="['/acepta']"><ion-icon name="thumbs-up-outline"></ion-icon></div>
+        <div class="no"[routerLink]="['/no-acepta']"><ion-icon name="thumbs-down-outline"></ion-icon></div>
       </div>
     </div>
 
